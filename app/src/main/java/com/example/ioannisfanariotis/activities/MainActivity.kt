@@ -1,4 +1,4 @@
-package com.example.ioannisfanariotis
+package com.example.ioannisfanariotis.activities
 
 import android.app.Dialog
 import android.widget.AdapterView.OnItemSelectedListener

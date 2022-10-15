@@ -48,7 +48,7 @@ dependencies {
     //kotlin extensions for coroutine support with room
     implementation("androidx.room:room-ktx:2.4.3")
     //kotlin extensions for coroutine support with activities
-    implementation "androidx.activity:activity-ktx:1.5.1"
+    implementation "androidx.activity:activity-ktx:1.6.0"
 
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'

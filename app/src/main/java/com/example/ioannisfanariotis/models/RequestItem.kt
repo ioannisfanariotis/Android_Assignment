@@ -1,4 +1,4 @@
-package com.example.ioannisfanariotis
+package com.example.ioannisfanariotis.models
 
 data class RequestItem(
     val date: String,

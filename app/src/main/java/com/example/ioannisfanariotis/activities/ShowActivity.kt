@@ -1,11 +1,15 @@
-package com.example.ioannisfanariotis
+package com.example.ioannisfanariotis.activities
 
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.widget.Toast
+import com.example.ioannisfanariotis.*
+import com.example.ioannisfanariotis.adapters.MyAdapter
 import com.example.ioannisfanariotis.databinding.ActivityShowBinding
+import com.example.ioannisfanariotis.models.RequestItem
+import com.example.ioannisfanariotis.network.APIInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,9 +49,9 @@ class ShowActivity : AppCompatActivity() {
     }
 
     private fun getRequest(searchYear: String) {
-        val builder = Utils.getInstance().create(APIInterface::class.java) //creates an instance of API interface
-        val data = builder.getYear(searchYear)                             //creates a call instance, looking up selected year as a contributor
-        data.enqueue(object : Callback<List<RequestItem>?> {               //fetch a list
+        val apiName = APIInterface.getInstance()                       //creates an instance of API interface
+        val data = apiName.getYear(searchYear)                         //creates a call instance, looking up selected year as a contributor
+        data.enqueue(object : Callback<List<RequestItem>?> {           //fetch a list
             override fun onResponse(call: Call<List<RequestItem>?>, response: Response<List<RequestItem>?>) {
                 if(response.isSuccessful){
                     val body = response.body()!!
@@ -55,6 +59,7 @@ class ShowActivity : AppCompatActivity() {
                     cancelLoading()
                 }else{
                     Toast.makeText(this@ShowActivity, "Fail to retrieve data", Toast.LENGTH_SHORT).show()
+                    cancelLoading()
                 }
             }
 
