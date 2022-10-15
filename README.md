@@ -1,7 +1,7 @@
 The holiday application will execute the corresponding API call and will get the result of the Public Holidays API for a selected year (1970-2050).
 Technologies that are used: VIEW BINDING, RETROFIT.
 
-![1](https://user-images.githubusercontent.com/109162046/194760439-a835c035-f03f-4d42-aa84-c1acd724c1da.PNG)
-![2](https://user-images.githubusercontent.com/109162046/194760450-805e7bad-32ba-43bd-b784-a313cebc1f96.PNG)
-![3](https://user-images.githubusercontent.com/109162046/194760451-64549ccf-0435-47d9-ada3-234d3a62ad93.PNG)
-![4](https://user-images.githubusercontent.com/109162046/194760454-a61583be-900e-4970-b0bd-8b1e3eb92126.PNG)
+![1](https://user-images.githubusercontent.com/109162046/195989357-e2d732b8-94ac-4f66-b124-bb91f060fe1f.png)
+![2](https://user-images.githubusercontent.com/109162046/195989361-b670b5b6-6186-4f1a-80f7-9fe173803624.png)
+![3](https://user-images.githubusercontent.com/109162046/195989363-19d24249-f63d-423b-ba09-9614c90060d1.png)
+![4](https://user-images.githubusercontent.com/109162046/195989364-28214284-30d0-48be-a972-0197733b6d16.png)
