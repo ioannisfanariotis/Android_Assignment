@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
 
         binding?.search?.setOnClickListener {
             if(!yearFlag){
-                Toast.makeText(this, "Please pick a year", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please select a year", Toast.LENGTH_SHORT).show()
             }else if(!countryFlag){
-                Toast.makeText(this, "Please pick a country", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please select a country", Toast.LENGTH_SHORT).show()
             }else{
                 val intent = Intent(this, ShowActivity::class.java)
                 intent.putExtra("searchYear", searchYear)

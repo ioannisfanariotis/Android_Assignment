@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">Public Holidays</string>
-    <string name="title">Public Holidays In Greece</string>
     <string name="welcome">Welcome!</string>
-    <string name="select">Please enter the year you want to look for</string>
+    <string name="select">Please select a year and a country</string>
     <string name="year">SELECT YEAR</string>
     <string name="country">SELECT COUNTRY</string>
     <string name="search">SEARCH</string>
