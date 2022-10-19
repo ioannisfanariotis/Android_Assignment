@@ -14,12 +14,26 @@
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:theme="@style/Theme.IoannisFanariotis"
-        android:background="@color/white"
-        app:titleTextColor="@color/black"/>
+        android:background="@drawable/ic_bg"
+        app:titleTextColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/noData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/nothing"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:visibility="visible"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/row_item"/>
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_item"
+        android:visibility="gone"
+        tools:visibility="visible"/>
 </LinearLayout>

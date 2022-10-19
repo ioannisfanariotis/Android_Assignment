@@ -29,7 +29,7 @@ class MyAdapter: RecyclerView.Adapter<MyAdapter.ViewHolder>() {
         return item.size
     }
 
-    class ViewHolder(val binding: RowItemBinding):RecyclerView.ViewHolder(binding.root){ //only 4 out of 9 elements I need to show
+    class ViewHolder(private val binding: RowItemBinding):RecyclerView.ViewHolder(binding.root){ //only 4 out of 9 elements I need to show
         fun bind(model: RequestItem){
             binding.date.text = "Date: ${model.date}"
             binding.localName.text = "Local Name: ${model.localName}"

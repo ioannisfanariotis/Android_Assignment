@@ -9,8 +9,8 @@ import retrofit2.http.Path
 
 interface APIInterface {
 
-    @GET("{year}/GR")
-    fun getYear(@Path("year") year: String): Call<List<RequestItem>>
+    @GET("{year}/{country}")
+    fun getInfo(@Path("year") year: String, @Path("country") country: String): Call<List<RequestItem>>
 
     companion object {
         var BASE_URL = "https://date.nager.at/api/v2/publicholidays/"

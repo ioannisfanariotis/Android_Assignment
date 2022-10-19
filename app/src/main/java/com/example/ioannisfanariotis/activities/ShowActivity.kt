@@ -3,6 +3,7 @@ package com.example.ioannisfanariotis.activities
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.widget.Toast
 import com.example.ioannisfanariotis.*
@@ -25,7 +26,10 @@ class ShowActivity : AppCompatActivity() {
         binding = ActivityShowBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        startLoading() //spinner
+        binding?.noData?.visibility = View.VISIBLE
+        binding?.rvList?.visibility = View.GONE
+
+        startLoading()
         setSupportActionBar(binding?.toolbar)
         if(supportActionBar != null){
             supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -36,24 +40,27 @@ class ShowActivity : AppCompatActivity() {
 
         binding?.rvList?.layoutManager = LinearLayoutManager(this@ShowActivity)
 
-        val bundle: Bundle? = intent.extras //receiving user's selected year
-        if(bundle?.containsKey("searchYear")!!)
+        val bundle: Bundle? = intent.extras //receiving user's info
+        if(bundle?.containsKey("searchYear")!! && bundle.containsKey("searchCountry"))
         {
             val searchYear = intent.getStringExtra("searchYear")
-            if (searchYear != null) {
-                getRequest(searchYear)
+            val searchCountry = intent.getStringExtra("searchCountry")
+            if (searchYear != null && searchCountry != null) {
+                getRequest(searchYear, searchCountry)
                 myAdapter = MyAdapter()
                 binding?.rvList?.adapter = myAdapter
             }
         }
     }
 
-    private fun getRequest(searchYear: String) {
+    private fun getRequest(searchYear: String, searchCountry: String) {
         val apiName = APIInterface.getInstance()                       //creates an instance of API interface
-        val data = apiName.getYear(searchYear)                         //creates a call instance, looking up selected year as a contributor
+        val data = apiName.getInfo(searchYear, searchCountry)          //creates a call instance, looking up selected info as a contributor
         data.enqueue(object : Callback<List<RequestItem>?> {           //fetch a list
             override fun onResponse(call: Call<List<RequestItem>?>, response: Response<List<RequestItem>?>) {
                 if(response.isSuccessful){
+                    binding?.noData?.visibility = View.GONE
+                    binding?.rvList?.visibility = View.VISIBLE
                     val body = response.body()!!
                     myAdapter?.submitList(body)
                     cancelLoading()

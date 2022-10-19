@@ -52,17 +52,37 @@
                 android:gravity="center"
                 android:textColor="#7A8089" />
 
-            <Button
-                android:id="@+id/year"
-                android:layout_width="120dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/orange"
-                android:text="@string/year"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/year"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:backgroundTint="@color/orange"
+                    android:text="@string/year"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/country"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:layout_margin="15dp"
+                    android:backgroundTint="@color/orange"
+                    android:text="@string/country"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/search"

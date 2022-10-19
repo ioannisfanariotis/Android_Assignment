@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">Ioannis Fanariotis</string>
+    <string name="app_name">Public Holidays</string>
     <string name="title">Public Holidays In Greece</string>
     <string name="welcome">Welcome!</string>
     <string name="select">Please enter the year you want to look for</string>
     <string name="year">SELECT YEAR</string>
+    <string name="country">SELECT COUNTRY</string>
     <string name="search">SEARCH</string>
     <string name="please_select_an_option">Please select an option</string>
     <string name="wait">Please wait…</string>
+    <string name="nothing">No Holidays Found</string>
 </resources>
